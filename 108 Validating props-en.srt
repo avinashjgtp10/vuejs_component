@@ -1,0 +1,264 @@
+1
+00:00:01,710 --> 00:00:02,130
+Great.
+
+2
+00:00:02,130 --> 00:00:06,960
+So we build our component which uses props to get data from the parent.
+
+3
+00:00:07,140 --> 00:00:09,930
+We can then use it in a function as we do here.
+
+4
+00:00:09,960 --> 00:00:15,990
+Maybe it's a reusable component you want to use in multiple places and in each place it gets different
+
+5
+00:00:15,990 --> 00:00:16,800
+data.
+
+6
+00:00:16,800 --> 00:00:20,690
+But of course the type of data should always be equal.
+
+7
+00:00:20,700 --> 00:00:27,710
+So here where we reworks the name while this will not work if you pass in a number or a boolean.
+
+8
+00:00:27,750 --> 00:00:28,890
+It has to be a string.
+
+9
+00:00:28,890 --> 00:00:30,610
+This component gets.
+
+10
+00:00:30,660 --> 00:00:36,780
+So in order to make sure we're not getting an error due to someone passing let's say one year keep the
+
+11
+00:00:36,780 --> 00:00:40,190
+dynamic binding to pass a number instead of a string.
+
+12
+00:00:40,590 --> 00:00:43,660
+Well that of course will break the application
+
+13
+00:00:46,170 --> 00:00:50,390
+as you can tell here because we can't use split on a number.
+
+14
+00:00:50,820 --> 00:00:57,060
+So in order to prevent this we want to validate the prop's coming in and that can set up validation
+
+15
+00:00:57,060 --> 00:01:04,890
+here in this prop's array or in this prop's key here on our object prop's can not only be an array if
+
+16
+00:01:04,890 --> 00:01:06,150
+you want to validate it.
+
+17
+00:01:06,300 --> 00:01:07,810
+It should be an object.
+
+18
+00:01:08,070 --> 00:01:12,880
+And there we have as a key or a property name like my name.
+
+19
+00:01:13,080 --> 00:01:16,810
+And then as a value the type of that.
+
+20
+00:01:16,860 --> 00:01:22,420
+So that could be of type string to force it to be of type string.
+
+21
+00:01:22,830 --> 00:01:26,100
+You could also say it can be multiple types.
+
+22
+00:01:26,100 --> 00:01:31,800
+So since these basically only want to reverse that you could also say this should be of type string
+
+23
+00:01:32,220 --> 00:01:33,540
+or array.
+
+24
+00:01:33,840 --> 00:01:36,310
+So we're passing now array of types here.
+
+25
+00:01:36,330 --> 00:01:41,070
+You can say it can have multiple types multiple types are valid though.
+
+26
+00:01:41,090 --> 00:01:44,330
+Here I want to revert back to just using the string.
+
+27
+00:01:44,520 --> 00:01:49,400
+So with this I'm making sure that I'm only getting the data on one I get.
+
+28
+00:01:49,410 --> 00:01:54,270
+Now what happens if I set up the validation here and pass a one.
+
+29
+00:01:54,270 --> 00:02:00,050
+Now I've saved this and I opened the console and reload the page here.
+
+30
+00:02:00,420 --> 00:02:08,220
+You see now I'm getting a warning that the prompt check did fail and the whole component is therefore
+
+31
+00:02:08,250 --> 00:02:10,370
+not attached like this.
+
+32
+00:02:10,370 --> 00:02:14,980
+So I'm still getting an error of course because what else should do you just do.
+
+33
+00:02:14,980 --> 00:02:17,810
+It can prevent me from typing a wrong code there.
+
+34
+00:02:18,020 --> 00:02:23,120
+But I do get such warnings at development time and thus I recognize that number.
+
+35
+00:02:23,130 --> 00:02:30,380
+I'm using the wrong property and by adding validation like this I'm making sure that inside of this
+
+36
+00:02:30,380 --> 00:02:36,860
+component I can be sure that I only get strings because otherwise my application will flow in error
+
+37
+00:02:36,890 --> 00:02:44,660
+anyways and will give me at development time a warning when setting up the types of properties you can
+
+38
+00:02:44,660 --> 00:02:48,580
+do even more than just setting the Type Like This.
+
+39
+00:02:48,680 --> 00:02:56,030
+This could now all to be an object where you set the type of the type key and you could also set required
+
+40
+00:02:56,030 --> 00:03:02,420
+to true to make sure this is a property which always is a string and it should always be available it
+
+41
+00:03:02,420 --> 00:03:05,850
+should always be passed if you don't set required.
+
+42
+00:03:05,990 --> 00:03:13,040
+It would be valid to use your component like this and not pass this name well by setting required to
+
+43
+00:03:13,040 --> 00:03:13,830
+true.
+
+44
+00:03:13,850 --> 00:03:20,570
+You're making sure this component may only be used if this component or excuse me if this property is
+
+45
+00:03:20,570 --> 00:03:21,440
+passed.
+
+46
+00:03:21,650 --> 00:03:27,140
+So that's in addition when setting up prompt validation to make sure that your component definitely
+
+47
+00:03:27,140 --> 00:03:29,760
+has what it needs to run optimally.
+
+48
+00:03:30,020 --> 00:03:34,170
+You can also set a default value to make sure dead.
+
+49
+00:03:34,190 --> 00:03:36,520
+Well you have something to work with.
+
+50
+00:03:36,560 --> 00:03:42,410
+Of course default doesn't make sense to Gabr with required because how would you have a default if it's
+
+51
+00:03:42,410 --> 00:03:43,400
+required anyways.
+
+52
+00:03:43,430 --> 00:03:45,530
+The default would always get overwritten.
+
+53
+00:03:45,740 --> 00:03:52,620
+So default would be said to indicate a string some string like Max.
+
+54
+00:03:53,000 --> 00:04:01,280
+So that now if my remove does my name here and I'm not passing a property I'm still getting Max passed
+
+55
+00:04:01,280 --> 00:04:03,880
+down there as you can see by the reverse name.
+
+56
+00:04:03,890 --> 00:04:05,800
+I'll revert this nonetheless.
+
+57
+00:04:06,200 --> 00:04:10,970
+And if you would have let's say an object or array here.
+
+58
+00:04:10,970 --> 00:04:16,580
+So if you have type object let's say it doesn't make sense here but if you would have this well then
+
+59
+00:04:16,580 --> 00:04:23,030
+the default should always be a function which returns the object structure it should have a default
+
+60
+00:04:23,060 --> 00:04:29,120
+object you want to use like name Max again doesn't make sense for this use case but just to let you
+
+61
+00:04:29,120 --> 00:04:36,380
+know how that would look like you would use such a function if that is of type Object or array for primitive
+
+62
+00:04:36,380 --> 00:04:39,260
+types like string boolean and number.
+
+63
+00:04:39,270 --> 00:04:45,110
+So like string we used before you said it directly to that value you want to use though.
+
+64
+00:04:45,860 --> 00:04:51,290
+This is how you validate props and how you make sure that the properties the props you're working with
+
+65
+00:04:51,620 --> 00:04:53,280
+actually have the floor mat.
+
+66
+00:04:53,360 --> 00:04:54,530
+You need them to have.
+
